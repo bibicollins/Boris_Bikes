@@ -19,4 +19,10 @@ describe DockingStation do
   it "allows user to dock a bike" do
     expect(docking_station).to respond_to(:dock_bike)
   end
+  it "has the method docked?" do
+    expect(docking_station).to respond_to(:docked)
+  end
+  it "tells you if a bike is docked" do
+    expect(docking_station.docked).to eq true
+  end
 end
