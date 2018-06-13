@@ -13,16 +13,22 @@ describe DockingStation do
   end
 
   it "tests if the bike is working" do
-    expect(bike.working?).to eq true
+    expect(bike).to be_working
   end
 
   it "allows user to dock a bike" do
     expect(docking_station).to respond_to(:dock_bike)
   end
+
   it "has the method docked?" do
     expect(docking_station).to respond_to(:docked)
   end
+
   it "tells you if a bike is docked" do
-    expect(docking_station.docked).to eq true
+    expect(docking_station.docked).to eq false
+  end
+
+  it "raises an error when user tries to release from an empty station" do
+    expect{ docking_station.release_bike }.to raise_error('No bikes available')
   end
 end

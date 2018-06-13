@@ -8,15 +8,15 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
+    if @docked  == true
+      @docked = false
+      Bike.new
+    elsif @docked == false
+      raise 'No bikes available'
+    end
   end
 
   def dock_bike
   end
 
-
-
-   #def docked?
-  #  @docked
-  #end
 end
