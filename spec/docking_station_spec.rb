@@ -3,17 +3,17 @@ require 'docking_station'
 describe DockingStation do
   docking_station = DockingStation.new
   bike = docking_station.release_bike
-
+  bike2 = Bike.new
   it "responds to release_bike method" do
     expect(docking_station).to respond_to(:release_bike)
   end
 
-  it "gets a working bike" do
-    expect(bike).to respond_to(:working?)
+  it "responds to working bike method" do
+    expect(bike2).to respond_to(:working?)
   end
 
   it "tests if the bike is working" do
-    expect(bike).to be_working
+    expect(bike2).to be_working
   end
 
   it "allows user to dock a bike" do
