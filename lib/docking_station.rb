@@ -17,6 +17,7 @@ class DockingStation
   end
 
   def dock_bike
+    @docked = true
   end
 
 end
