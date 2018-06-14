@@ -1,6 +1,7 @@
 require_relative 'bike'
 
 class DockingStation
+
   attr_reader :docked
 
   def initialize
@@ -9,17 +10,19 @@ class DockingStation
 
   def release_bike
     if @docked  == true
-
       @docked = false
       Bike.new
-      elsif @docked == false
+    elsif @docked == false
       raise 'No bikes available'
     end
   end
 
   def dock_bike
-    @docked = true
+    if @docked == false
+      @docked = true
+    else
+      raise 'Station is full'
+    end
   end
 
-# test 1 2
 end
