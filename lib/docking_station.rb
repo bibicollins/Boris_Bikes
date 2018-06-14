@@ -9,14 +9,16 @@ class DockingStation
 
   def release_bike
     if @docked  == true
+
       @docked = false
       Bike.new
-    elsif @docked == false
+      elsif @docked == false
       raise 'No bikes available'
     end
   end
 
   def dock_bike
+    @docked = true
   end
 
 end
