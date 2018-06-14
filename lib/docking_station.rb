@@ -20,4 +20,5 @@ class DockingStation
     @docked = true
   end
 
+test
 end
